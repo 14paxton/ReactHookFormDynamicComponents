@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import { useFormatMessage } from '../../i18n/i18n.util';
 import MuiTextField from '@material-ui/core/TextField';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { FormattedMessage } from 'react-intl';
+
 
 const inputStyles = {
   backgroundColor: 'white',
@@ -40,10 +40,7 @@ const SelectBox = ({ parentFormId, inputObject, setFormData, formData }) => {
     inputObject.label.default
   );
 
-  const selectOne = useFormatMessage(
-    'create.group.modal.results.table.advanced.search.default.select.one',
-    'Select One'
-  );
+  const selectOne = 'Select One';
 
   const handleChange = (event) => {
     setValue(`${inputObject.id}`, event.target.value.id);
@@ -78,7 +75,7 @@ const SelectBox = ({ parentFormId, inputObject, setFormData, formData }) => {
       </MenuItem>
       {options.map((option) => (
         <MenuItem style={{ display: 'flex' }} key={option.id} value={option}>
-          <FormattedMessage id={option.key} defaultMessage={option.default} />
+          <p>{option.label}</>
         </MenuItem>
       ))}
     </TextField>
