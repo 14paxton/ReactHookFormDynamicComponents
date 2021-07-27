@@ -1,5 +1,4 @@
 import { useFormContext } from 'react-hook-form';
-import { useFormatMessage } from '../../i18n/i18n.util';
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
@@ -14,10 +13,7 @@ const TextBox = ({ parentFormId, inputObject, setFormData, formData }) => {
     inputObject.label.default
   );
 
-  const twoCharError = useFormatMessage(
-    'create.group.modal.results.table.advanced.search.textbox.error.two.characters',
-    'Please type at least 2 characters to search.'
-  );
+  const twoCharError = 'Please type at least 2 characters to search.';
 
   return (
     <TextField
