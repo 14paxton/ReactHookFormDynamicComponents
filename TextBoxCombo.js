@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { useFormContext } from 'react-hook-form';
 import { createFilterOptions } from '@material-ui/lab/Autocomplete';
-import { useFormatMessage } from '../../i18n/i18n.util';
+
 
 const Autocomplete = withStyles({
   root: {
@@ -48,11 +48,8 @@ export default function TextBoxCombo({ parentFormId, inputObject, setFormData, f
   const [selectedValue, setSelectedValue] = useState();
   const { register, setValue } = useFormContext();
   const loading = open && options.length === 0;
-  const label = useFormatMessage(inputObject.label.key, inputObject.label.default);
-  const selectOne = useFormatMessage(
-    'create.group.modal.results.table.advanced.search.default.select.one',
-    'Select One'
-  );
+  const label = inputObject.label.;
+  const selectOne = 'Select One';
   const placeHolderText = !!options.length ? (options.length > 1 ? selectOne : inputObject?.choices[0]?.name) : '';
 
   register(`${inputObject.id}`);
