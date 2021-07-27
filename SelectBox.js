@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MenuItem } from '@material-ui/core';
 import { useFormContext } from 'react-hook-form';
-import { useFormatMessage } from '../../i18n/i18n.util';
 import MuiTextField from '@material-ui/core/TextField';
 import withStyles from '@material-ui/core/styles/withStyles';
 
@@ -35,10 +34,7 @@ const SelectBox = ({ parentFormId, inputObject, setFormData, formData }) => {
     }
   }, [formData]);
 
-  const label = useFormatMessage(
-    inputObject.label.key,
-    inputObject.label.default
-  );
+  const label = inputObject.label;
 
   const selectOne = 'Select One';
 
